@@ -1,0 +1,22 @@
+.carely-navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 12px 0;
+    transition: var(--transition);
+}
+
+.carely-navbar .nav-link {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 8px 16px !important;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.carely-navbar .nav-link:hover {
+    color: var(--color-button);
+    background: rgba(91, 141, 239, 0.05);
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carely - Cuidado Personal</title>
+    <meta name="description" content="Carely - Tu tienda de cuidado personal de confianza. Productos originales para el cuidado de tu piel, cuerpo y bienestar.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/navbar.css" rel="stylesheet">
+    <link href="css/hero.css" rel="stylesheet">
+    <link href="css/sections.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top carely-navbar">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                    <div class="brand-icon">
+                        <i class="bi bi-droplet"></i>
+                    </div>
+                    <span class="brand-text">Carely</span>
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#beneficios">Beneficios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#categorias">Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#por-que-carely">¿Por qué Carely?</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-carely-outline ms-lg-2" href="#">
+                                <i class="bi bi-box-arrow-in-right me-1"></i>Iniciar Sesión
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-carely-primary ms-lg-2" href="#">
+                                <i class="bi bi-person-plus me-1"></i>Crear Cuenta
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-85">
+                    <div class="col-lg-6 hero-content">
+                        <span class="badge-hero">Bienestar y Belleza</span>
+                        <h1 class="hero-title">Tu bienestar es nuestra <span class="text-highlight">prioridad</span></h1>
+                        <p class="hero-description">Descubre una selección cuidadosamente curada de productos de cuidado personal, diseñados para consentirte y realzar tu belleza natural.</p>
+                        <div class="hero-cta d-flex flex-wrap gap-3">
+                            <a href="#destacados" class="btn btn-carely-primary btn-lg">
+                                <i class="bi bi-shop me-2"></i>Ver Catálogo
+                            </a>
+                            <a href="#" class="btn btn-carely-outline btn-lg">
+                                Crear Cuenta
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 hero-visual">
+                        <div class="hero-image-wrapper">
+                            <div class="hero-bg-shape"></div>
+                            <img src="images/hero-placeholder.svg" alt="Cuidado personal" class="hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="destacados" class="section-padding featured-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Lo Más Vendido</span>
+                    <h2 class="section-title">Productos Destacados</h2>
+                    <p class="section-subtitle">Los favoritos de nuestra comunidad que no pueden faltar en tu rutina.</p>
+                </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card card-carely h-100">
+                            <div class="product-image-wrapper">
+                                <div class="product-image-placeholder">
+                                    <i class="bi bi-box"></i>
+                                </div>
+                                <span class="product-badge">Destacado</span>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Cuidado Facial</span>
+                                <h3 class="product-name">Serum Vitamina C</h3>
+                                <p class="product-description">Serum antioxidante con vitamina C pura para un tono uniforme.</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$349.00</span>
+                                    <span class="product-stock in-stock">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        En stock
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card card-carely h-100">
+                            <div class="product-image-wrapper">
+                                <div class="product-image-placeholder">
+                                    <i class="bi bi-box"></i>
+                                </div>
+                                <span class="product-badge">Destacado</span>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Cuidado Corporal</span>
+                                <h3 class="product-name">Crema Hidratante SPF30</h3>
+                                <p class="product-description">Protección solar e hidratación profunda en una sola crema.</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$289.00</span>
+                                    <span class="product-stock in-stock">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        En stock
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="product-card card-carely h-100">
+                            <div class="product-image-wrapper">
+                                <div class="product-image-placeholder">
+                                    <i class="bi bi-box"></i>
+                                </div>
+                                <span class="product-badge">Destacado</span>
+                            </div>
+                            <div class="product-info">
+                                <span class="product-category">Cuidado Capilar</span>
+                                <h3 class="product-name">Aceite de Argán Puro</h3>
+                                <p class="product-description">Tratamiento natural para brillo y suavidad en tu cabello.</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$225.00</span>
+                                    <span class="product-stock in-stock">
+                                        <i class="bi bi-check-circle-fill"></i>
+                                        En stock
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-carely-primary btn-lg">
+                        Ver Catálogo Completo
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="beneficios" class="section-padding benefits-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">¿Por qué nos eligen?</span>
+                    <h2 class="section-title">Beneficios de elegir Carely</h2>
+                    <p class="section-subtitle">Nos preocupamos por ofrecerte la mejor experiencia de cuidado personal.</p>
+                </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="benefit-card card-carely h-100">
+                            <div class="benefit-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3 class="benefit-title">Productos 100% Originales</h3>
+                            <p class="benefit-description">Trabajamos directamente con marcas reconocidas para garantizar la autenticidad de cada producto.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="benefit-card card-carely h-100">
+                            <div class="benefit-icon">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <h3 class="benefit-title">Envío Rápido y Seguro</h3>
+                            <p class="benefit-description">Recibe tus productos en la puerta de tu casa con entregas rápidas y empaque cuidadoso.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="benefit-card card-carely h-100">
+                            <div class="benefit-icon">
+                                <i class="bi bi-star"></i>
+                            </div>
+                            <h3 class="benefit-title">Asesoría Personalizada</h3>
+                            <p class="benefit-description">Nuestro equipo de expertos te ayuda a encontrar los productos ideales para tu tipo de piel.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="benefit-card card-carely h-100">
+                            <div class="benefit-icon">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </div>
+                            <h3 class="benefit-title">Devoluciones Sin Complicaciones</h3>
+                            <p class="benefit-description">Si no estás satisfecha, puedes devolver tu producto en un plazo de 30 días.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categorias" class="section-padding categories-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-badge">Nuestras Categorías</span>
+                    <h2 class="section-title">Explora por categoría</h2>
+                    <p class="section-subtitle">Encuentra todo lo que necesitas para tu rutina de cuidado personal.</p>
+                </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card card-carely h-100">
+                            <div class="category-icon">
+                                <i class="bi bi-emoji-smile"></i>
+                            </div>
+                            <h3 class="category-name">Cuidado Facial</h3>
+                            <p class="category-description">Serums, cremas hidratantes, limpiadores y tratamientos para rostro.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card card-carely h-100">
+                            <div class="category-icon">
+                                <i class="bi bi-droplet-half"></i>
+                            </div>
+                            <h3 class="category-name">Cuidado Corporal</h3>
+                            <p class="category-description">Lociones, exfoliantes, aceites y protectores solares para tu cuerpo.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card card-carely h-100">
+                            <div class="category-icon">
+                                <i class="bi bi-scissors"></i>
+                            </div>
+                            <h3 class="category-name">Cuidado Capilar</h3>
+                            <p class="category-description">Shampoo, acondicionador, mascarillas y aceites para tu cabello.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card card-carely h-100">
+                            <div class="category-icon">
+                                <i class="bi bi-palette"></i>
+                            </div>
+                            <h3 class="category-name">Maquillaje</h3>
+                            <p class="category-description">Base, corrector, sombras, labiales y todo para realzar tu belleza.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="category-card card-carely h-100">
+                            <div class="category-icon">
+                                <i class="bi bi-flower1"></i>
+                            </div>
+                            <h3 class="category-name">Fragancias</h3>
+                            <p class="category-description">Perfumes y colonias con aromas que reflejan tu personalidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="por-que-carely" class="section-padding why-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="why-image-wrapper">
+                            <div class="why-bg-shape"></div>
+                            <img src="images/about-placeholder.svg" alt="Sobre Carely" class="why-img">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1">
+                        <span class="section-badge">Sobre Carely</span>
+                        <h2 class="section-title text-start">¿Por qué elegir Carely?</h2>
+                        <p class="section-subtitle text-start mb-5">En Carely creemos que el cuidado personal es una forma de amor propio. Por eso seleccionamos los mejores productos para ti.</p>
+                        <div class="why-list">
+                            <div class="why-item d-flex gap-3 mb-4">
+                                <div class="why-item-icon flex-shrink-0">
+                                    <i class="bi bi-heart"></i>
+                                </div>
+                                <div>
+                                    <h4 class="why-item-title">Cuidado de tu Piel</h4>
+                                    <p class="why-item-description mb-0">Seleccionamos cuidadosamente cada producto para ofrecerte lo mejor para el cuidado de tu piel.</p>
+                                </div>
+                            </div>
+                            <div class="why-item d-flex gap-3 mb-4">
+                                <div class="why-item-icon flex-shrink-0">
+                                    <i class="bi bi-emoji-smile"></i>
+                                </div>
+                                <div>
+                                    <h4 class="why-item-title">Experiencia de Compra</h4>
+                                    <p class="why-item-description mb-0">Disfruta de una experiencia de compra diseñada pensando en ti, desde la navegación hasta la entrega.</p>
+                                </div>
+                            </div>
+                            <div class="why-item d-flex gap-3 mb-4">
+                                <div class="why-item-icon flex-shrink-0">
+                                    <i class="bi bi-leaf"></i>
+                                </div>
+                                <div>
+                                    <h4 class="why-item-title">Compromiso con la Calidad</h4>
+                                    <p class="why-item-description mb-0">Nos asociamos con marcas que comparten nuestro compromiso con la calidad y la sostenibilidad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section section-padding">
+            <div class="container">
+                <div class="cta-card text-center">
+                    <h2 class="cta-title">Comienza tu experiencia Carely</h2>
+                    <p class="cta-description">Únete a nuestra comunidad y descubre una nueva forma de consentirte.</p>
+                    <a href="#" class="btn btn-carely-primary btn-lg">
+                        Crear mi Cuenta Gratis
+                        <i class="bi bi-heart ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="carely-footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+                            <div class="brand-icon">
+                                <i class="bi bi-droplet"></i>
+                            </div>
+                            <span class="brand-text">Carely</span>
+                        </div>
+                        <p class="footer-description">Tu tienda de cuidado personal de confianza. Productos originales, asesoría personalizada y envíos rápidos.</p>
+                        <div class="social-links d-flex gap-3">
+                            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-music-note-beamed"></i></a>
+                            <a href="#" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 offset-lg-1 col-md-4">
+                        <h5 class="footer-title">Categorías</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Cuidado Facial</a></li>
+                            <li><a href="#">Cuidado Corporal</a></li>
+                            <li><a href="#">Cuidado Capilar</a></li>
+                            <li><a href="#">Maquillaje</a></li>
+                            <li><a href="#">Fragancias</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4">
+                        <h5 class="footer-title">Ayuda</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#">Envíos</a></li>
+                            <li><a href="#">Devoluciones</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Términos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h5 class="footer-title">Contacto</h5>
+                        <ul class="footer-links contact-links">
+                            <li><i class="bi bi-envelope me-2"></i>hola@carely.com</li>
+                            <li><i class="bi bi-telephone me-2"></i>+52 55 1234 5678</li>
+                            <li><i class="bi bi-geo-alt me-2"></i>Ciudad de México, MX</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="mb-0">&copy; 2026 Carely. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
