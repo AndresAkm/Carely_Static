@@ -1,22 +1,170 @@
-.carely-navbar {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+/* ═══════════════════════════════════════════════════════════════
+   NAVBAR — Pure CSS with Hamburger Toggle
+   ═══════════════════════════════════════════════════════════════ */
+
+.c-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(254, 252, 253, .92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, .04);
     padding: 12px 0;
-    transition: var(--transition);
+    transition: box-shadow .3s var(--ease);
 }
 
-.carely-navbar .nav-link {
-    color: var(--color-text-secondary);
+.c-nav--scrolled {
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .06);
+}
+
+.c-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand */
+.c-nav__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.c-nav__brand-icon {
+    width: 38px;
+    height: 38px;
+    background: transparent;
+    border-radius: var(--r-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+/* Links */
+.c-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+
+.c-nav__links li {
+    display: flex;
+    align-items: center;
+}
+
+.c-nav__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: var(--r-pill);
+    font-size: .88rem;
     font-weight: 500;
-    font-size: 0.9rem;
-    padding: 8px 16px !important;
-    border-radius: 50px;
-    transition: var(--transition);
+    color: var(--clr-text-2);
+    transition: all .25s var(--ease);
 }
 
-.carely-navbar .nav-link:hover {
-    color: var(--color-button);
-    background: rgba(91, 141, 239, 0.05);
+.c-nav__links a:hover {
+    color: var(--clr-text);
+    background: rgba(0, 0, 0, .03);
+}
+
+.c-nav__btn {
+    border: 1.5px solid var(--clr-border);
+    padding: 8px 20px !important;
+}
+
+.c-nav__btn:hover {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background: transparent !important;
+}
+
+.c-nav__btn--fill {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border-color: var(--accent) !important;
+}
+
+.c-nav__btn--fill:hover {
+    background: color-mix(in srgb, var(--accent) 85%, #000) !important;
+    border-color: color-mix(in srgb, var(--accent) 85%, #000) !important;
+    color: #fff !important;
+}
+
+/* Hamburger */
+.c-nav__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10;
+}
+
+.c-nav__hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--clr-text);
+    border-radius: 2px;
+    transition: all .3s var(--ease);
+    transform-origin: center;
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+    .c-nav__hamburger { display: flex; }
+
+    .c-nav__links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 85vw);
+        height: 100vh;
+        background: var(--clr-card);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 80px 28px 28px;
+        gap: 4px;
+        box-shadow: -4px 0 30px rgba(0, 0, 0, .1);
+        transition: right .35s var(--ease);
+        z-index: 5;
+    }
+
+    .c-nav__links a {
+        padding: 12px 16px;
+        border-radius: var(--r-md);
+        font-size: 1rem;
+    }
+
+    .c-nav__btn {
+        margin-top: 8px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Toggle open */
+    .c-nav__toggle-input:checked ~ .c-nav__links {
+        right: 0;
+    }
+
+    .c-nav__toggle-input:checked ~ .c-nav__hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .c-nav__toggle-input:checked ~ .c-nav__hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .c-nav__toggle-input:checked ~ .c-nav__hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 }
