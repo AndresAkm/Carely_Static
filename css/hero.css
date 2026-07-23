@@ -9,7 +9,8 @@
     align-items: center;
     overflow: hidden;
     padding-top: 80px;
-    background: var(--clr-bg);
+    background: var(--hero-bg, var(--clr-bg));
+    transition: background .8s var(--ease);
 }
 
 /* ── Mesh Gradient Blobs ── */
@@ -24,14 +25,16 @@
 .hero__blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(60px);
     will-change: transform;
+    transition: background .8s var(--ease), opacity .8s var(--ease);
+    transform: translateZ(0);
 }
 
 .hero__blob--sage {
     width: clamp(300px, 35vw, 600px);
     height: clamp(300px, 35vw, 600px);
-    background: var(--clr-primary-soft);
+    background: var(--hero-blob-1, var(--clr-primary-soft));
     opacity: .45;
     top: -8%;
     left: -5%;
@@ -41,7 +44,7 @@
 .hero__blob--rose {
     width: clamp(250px, 30vw, 500px);
     height: clamp(250px, 30vw, 500px);
-    background: var(--clr-secondary-soft);
+    background: var(--hero-blob-2, var(--clr-secondary-soft));
     opacity: .35;
     top: 20%;
     right: -8%;
@@ -51,7 +54,7 @@
 .hero__blob--amber {
     width: clamp(200px, 22vw, 400px);
     height: clamp(200px, 22vw, 400px);
-    background: var(--clr-primary-soft);
+    background: var(--hero-blob-3, var(--clr-primary-soft));
     opacity: .3;
     bottom: -5%;
     left: 30%;
@@ -61,7 +64,7 @@
 .hero__blob--cream {
     width: clamp(180px, 20vw, 350px);
     height: clamp(180px, 20vw, 350px);
-    background: var(--clr-secondary-soft);
+    background: var(--hero-blob-4, var(--clr-secondary-soft));
     opacity: .4;
     top: 50%;
     left: 10%;
@@ -253,6 +256,17 @@
     will-change: transform;
 }
 
+.hero__showcase::after {
+    content: '';
+    position: absolute;
+    inset: -40px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--hero-glow, rgba(91,141,239,.12)) 0%, transparent 70%);
+    z-index: -1;
+    transition: background .8s var(--ease);
+    pointer-events: none;
+}
+
 .hero__showcase::before {
     content: '';
     position: absolute;
@@ -262,9 +276,9 @@
     width: 85%;
     height: 85%;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--clr-primary-soft), var(--clr-secondary-soft));
+    background: linear-gradient(135deg, var(--hero-ring-1, var(--clr-primary-soft)), var(--hero-ring-2, var(--clr-secondary-soft)));
     opacity: .6;
-    transition: all .5s var(--ease);
+    transition: all .5s var(--ease), background .8s var(--ease);
     z-index: 0;
 }
 
@@ -282,6 +296,7 @@
     border-radius: 50%;
     z-index: 1;
     transition: transform .5s var(--ease);
+    transform: translateZ(0);
 }
 
 .hero__showcase:hover .hero__showcase-img {
@@ -332,6 +347,17 @@
 .hero__float--clean i {
     color: var(--clr-primary);
     font-size: 1rem;
+}
+
+/* Float wrap — holds badges, flexible for mobile repositioning */
+.hero__float-wrap {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+.hero__float-wrap .hero__float {
+    pointer-events: auto;
 }
 
 /* Orbiting Product Cards */
@@ -435,4 +461,26 @@
     .hero__orb--1 { width: 80px; height: 105px; top: 0; left: -5%; }
     .hero__orb--2 { width: 75px; height: 100px; top: -3%; right: -3%; }
     .hero__orb--3 { width: 70px; height: 95px; bottom: 0; left: 10%; }
+
+    .hero__float {
+        display: none;
+    }
+
+    .hero__float-stars {
+        font-size: .6rem;
+    }
+
+    .hero__float-wrap {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 5;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 575.98px) {
 }

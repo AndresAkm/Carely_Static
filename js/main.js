@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ── Hero Tabs — Interactive Color Change ── */
+    /* ── Hero Tabs — Interactive Color Change + Atmosphere ── */
     const tabs = document.querySelectorAll('.hero__tab');
     const indicator = document.getElementById('tabsIndicator');
     const heroAccent = document.getElementById('heroAccent');
@@ -54,6 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
         root.style.setProperty('--accent', color);
         if (heroAccent) heroAccent.textContent = label;
 
+        /* Atmosphere: background, blobs, showcase glow, ring */
+        root.style.setProperty('--hero-bg', tab.dataset.bg);
+        root.style.setProperty('--hero-blob-1', tab.dataset.blob1);
+        root.style.setProperty('--hero-blob-2', tab.dataset.blob2);
+        root.style.setProperty('--hero-blob-3', tab.dataset.blob3);
+        root.style.setProperty('--hero-blob-4', tab.dataset.blob4);
+        root.style.setProperty('--hero-glow', tab.dataset.glow);
+        root.style.setProperty('--hero-ring-1', tab.dataset.ring1);
+        root.style.setProperty('--hero-ring-2', tab.dataset.ring2);
+
         moveIndicator(tab);
     }
 
@@ -61,10 +71,21 @@ document.addEventListener('DOMContentLoaded', () => {
         tab.addEventListener('click', () => activateTab(tab));
     });
 
-    /* Initialize indicator position */
+    /* Initialize indicator position + default atmosphere */
     requestAnimationFrame(() => {
         const activeTab = document.querySelector('.hero__tab.active');
-        if (activeTab) moveIndicator(activeTab);
+        if (activeTab) {
+            moveIndicator(activeTab);
+            /* Apply initial atmosphere from default tab */
+            root.style.setProperty('--hero-bg', activeTab.dataset.bg);
+            root.style.setProperty('--hero-blob-1', activeTab.dataset.blob1);
+            root.style.setProperty('--hero-blob-2', activeTab.dataset.blob2);
+            root.style.setProperty('--hero-blob-3', activeTab.dataset.blob3);
+            root.style.setProperty('--hero-blob-4', activeTab.dataset.blob4);
+            root.style.setProperty('--hero-glow', activeTab.dataset.glow);
+            root.style.setProperty('--hero-ring-1', activeTab.dataset.ring1);
+            root.style.setProperty('--hero-ring-2', activeTab.dataset.ring2);
+        }
     });
 
     /* Recalc on resize */
@@ -73,24 +94,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (activeTab) moveIndicator(activeTab);
     });
 
-    /* ── Hero Parallax / Mouse Tilt ── */
+    /* ── Hero Parallax / Mouse Tilt (throttled with rAF) ── */
     const showcase = document.getElementById('heroShowcase');
 
     if (showcase) {
         const heroSection = document.getElementById('hero');
+        let ticking = false;
 
         heroSection.addEventListener('mousemove', e => {
-            const rect = heroSection.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-            const tiltX = y * -8;
-            const tiltY = x * 8;
-            const moveX = x * -12;
-            const moveY = y * -12;
+                const tiltX = y * -8;
+                const tiltY = x * 8;
+                const moveX = x * -12;
+                const moveY = y * -12;
 
-            showcase.style.transform =
-                `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translate(${moveX}px, ${moveY}px)`;
+                showcase.style.transform =
+                    `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translate(${moveX}px, ${moveY}px)`;
+                ticking = false;
+            });
         });
 
         heroSection.addEventListener('mouseleave', () => {
